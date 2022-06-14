@@ -7,6 +7,9 @@ body {
   font-family: Inter, sans-serif;
   height: 100vh;
   background-color: #282D35;
+  background-image: url(./images/react-icon-large.png);
+  background-repeat: no-repeat;
+  background-position: right 40%;
 }
 
 nav {
@@ -62,4 +65,24 @@ main {
 .main--facts > li::marker {
   font-size: 1.4rem;
   color: #61DAFB;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #21222A;
+  color: #FFFFFF;
+  padding: 1.2em;
+  text-align: center;
+}
+
+a {
+  color: #DEEBF8;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FFFFFF;
+  text-decoration: none;
 }
