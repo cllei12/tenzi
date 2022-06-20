@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+}
+
+.hero {
+    display: flex;
+    background: #F55A5A;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    margin-bottom: 50px;
+}
+
+
+.hero-text{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.025em;
+}
+
+.hero-logo{
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.card {
+    display: flex;
+    margin: 20px 40px;
+    /* line between blocks */
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.card-img {
+    width: 125px;
+    height: 168px;
+    border-radius: 5px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.card-info {
+    color: #2B283A;
+    margin-top: 20px;
+}
+
+.card-info-addr {
+    display: flex;
+}
+
+.card-info-location {
+    margin: 0px 0px;
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.17em;
+    margin-right: 10px;
+}
+
+.card-info-map {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration-line: underline;
+    color: #918E9B;
+}
+
+.card-info-title {
+    height: 1.2em;
+    font-weight: 700;
+    font-size: 25px;
+    margin: 10px 0px;
+}
+
+.card-info-date {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.card-info-desc {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    /* or 15px */
+    color: #2B283A;
+    margin: 5px 0px;
+}
+
