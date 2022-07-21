@@ -22,11 +22,12 @@ https://create-react-app.dev/docs/getting-started/
 2. When you’re ready to deploy to production, create a minified bundle with `npm run build` (Builds the app for production to the build folder. ).
 
 ## Dependencies
+- [react-confetti](https://www.npmjs.com/package/react-confetti)
+
 ```shell
 # `-S` | `--save`: Package will appear in your dependencies.  
 # `-D` | `--save-dev`: Package will appear in your devDependencies.
-npm install [--save / --save-dev] <package>
+npm install [--save | --save-dev] <package>
 ```
+font: Karla
 
-
-[react-confetti](https://www.npmjs.com/package/react-confetti)
