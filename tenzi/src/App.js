@@ -19,22 +19,34 @@ function App(){
     return newDice
   }
 
-  // Re-roll all 10 dice
-  function rollDice(event) {
-    setDice(() => allNewDice())
+  // Re-roll all unheld dice
+  function rollDice(id) {
+    console.log(id)
+    setDice(prevDice => prevDice.map(die => {
+      return die.isHeld ? 
+        die : 
+        {...die, value: Math.ceil(Math.random() * 6)}
+    }))
+  }
+
+  // Function holdDice(id) -> set isHeld prop to flip dice
+  function holdDice(id) {
+    console.log(id)
+    setDice(prevDice => prevDice.map(die => {
+      return die.id === id ? {...die, isHeld: !die.isHeld} : die
+    }))
   }
 
   // Map arry to 10 Die components with state
   const [dice, setDice] = React.useState(allNewDice())
   const diceElements = dice.map(die => (
-    <Die key={die.id} value={die.value} />
+    <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)}/>
   ))
-
-  console.log(dice)
-
 
   return (
     <main>
+      <h1 className="title">Tenzies</h1>
+      <p className="instructions">Roll until all dice are the same. Click each number to freeze it at its current value between rolls.</p>
       <div className='dice-container'>
         {diceElements}
       </div>
