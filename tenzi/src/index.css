@@ -79,14 +79,14 @@ main {
 
 .roll-button {
   height: 50px;
-  width: 100px;
+  width: 150px;
   background: #5035FF;
   color: white;
   border: none;
   border-radius: 5px;
   font-size: 1.2em;
   font-family:'Courier New', Courier, monospace;
-  font-weight: bold;
+  font-weight: 600;
   cursor: pointer;
 }
 
