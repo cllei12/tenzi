@@ -5,7 +5,7 @@ import Die from './Die';
 
 
 function App(){
-  // create an array of 10 random numbers between 1-6 inclusive
+  // Create an array of 10 random numbers between 1-6 inclusive
   function allNewDice() {
     const newDice = []
     for (let i = 0; i < 10; i++) {
@@ -14,15 +14,22 @@ function App(){
     return newDice
   }
 
+  // Re-roll all 10 dice
+  function rollDice(event) {
+    setDice(() => allNewDice())
+  }
+
   // Map arry to 10 Die components with state
   const [dice, setDice] = React.useState(allNewDice())
   const diceElements = dice.map(die => <Die value={die} />)
+
 
   return (
     <main>
       <div className='dice-container'>
         {diceElements}
       </div>
+      <button className='roll-button' onClick={rollDice}>Roll</button>
     </main>  
   )
 }

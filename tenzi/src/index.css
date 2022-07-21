@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: #0B2434;
   padding: 20px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main {
@@ -31,7 +32,7 @@ main {
   
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -62,5 +63,25 @@ main {
 
 .die-num {
   font-size: 2em;
+}
+
+.roll-button {
+  height: 50px;
+  width: 100px;
+  background: #5035FF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2em;
   font-family:'Courier New', Courier, monospace;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.roll-button:focus {
+  outline: none;
+}
+
+.roll-button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }
