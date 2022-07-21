@@ -23,11 +23,16 @@ https://create-react-app.dev/docs/getting-started/
 
 ## Dependencies
 - [react-confetti](https://www.npmjs.com/package/react-confetti)
+- [nanoid](https://www.npmjs.com/package/nanoid)
+
+    Nano ID provides ES modules. You do not need to do anything to use Nano ID as ESM in webpack, Rollup, Parcel, or Node.js.
+    ```js
+    import { nanoid } from 'nanoid'
+    ```
 
 ```shell
 # `-S` | `--save`: Package will appear in your dependencies.  
 # `-D` | `--save-dev`: Package will appear in your devDependencies.
 npm install [--save | --save-dev] <package>
 ```
-font: Karla
 
