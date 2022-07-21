@@ -5,11 +5,14 @@ import Die from './Die';
 
 
 function App(){
-  // Create an array of 10 random numbers between 1-6 inclusive
+  // Create an array of 10 objects
   function allNewDice() {
     const newDice = []
     for (let i = 0; i < 10; i++) {
-      newDice.push(Math.ceil(Math.random() * 6));
+      newDice.push({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false
+      });
     }
     return newDice
   }
@@ -21,7 +24,9 @@ function App(){
 
   // Map arry to 10 Die components with state
   const [dice, setDice] = React.useState(allNewDice())
-  const diceElements = dice.map(die => <Die value={die} />)
+  const diceElements = dice.map(die => <Die value={die.value} />)
+
+  console.log(dice)
 
 
   return (
