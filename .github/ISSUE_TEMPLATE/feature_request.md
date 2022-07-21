@@ -11,8 +11,8 @@ assignees: cllei12
 Please describe your pull request.
 
 ## Checklist
-Please link related issues's id
-- [ ] #
-- [ ] #
+Please list new feature
+- [ ] 
+- [ ] 
 
-**Great job, Lei!**
+**Let's work on them, Lei!**
