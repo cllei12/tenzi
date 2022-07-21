@@ -2,6 +2,7 @@
 import React from 'react';
 import './App.css';
 import Die from './Die';
+import { nanoid } from 'nanoid'
 
 
 function App(){
@@ -10,6 +11,7 @@ function App(){
     const newDice = []
     for (let i = 0; i < 10; i++) {
       newDice.push({
+        id: nanoid(),  // generate random id as unique key
         value: Math.ceil(Math.random() * 6),
         isHeld: false
       });
@@ -24,7 +26,9 @@ function App(){
 
   // Map arry to 10 Die components with state
   const [dice, setDice] = React.useState(allNewDice())
-  const diceElements = dice.map(die => <Die value={die.value} />)
+  const diceElements = dice.map(die => (
+    <Die key={die.id} value={die.value} />
+  ))
 
   console.log(dice)
 
