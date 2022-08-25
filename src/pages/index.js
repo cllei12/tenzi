@@ -1,0 +1,5 @@
+export { default as Contact } from './Contact'
+export { default as Game } from './Game'
+export { default as Record } from './Record'
+export { default as NoPage} from './NoPage'
+export { default as Login} from './Login'

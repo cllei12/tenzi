@@ -10,12 +10,11 @@ body {
   margin: 0;
   /* background-color: #0B2434; */
   background-color:powderblue;
-  padding: 20px;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 main {
-  background-color: #F5F5F5;
+  /* background-color: #F5F5F5; */
   height: 500px;
   max-width: 800px;
   border-radius: 5px;
