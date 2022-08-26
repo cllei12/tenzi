@@ -2,8 +2,8 @@ import React from 'react'
 
 function Record() {
     const [records, setRecords] = React.useState([]);
-    // const URL = "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/"
-    const URL = "http://localhost:8080/"
+    const URL = "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/"
+    // const URL = "http://localhost:8080/"
 
     React.useEffect(() => {
         fetch(URL + 'api/record/getOrderByTime')
