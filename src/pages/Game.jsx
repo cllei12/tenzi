@@ -11,7 +11,7 @@ function Game() {
     // Tracker
     const [rolls, setRolls] = React.useState(0);
     const [time, setTime] = React.useState(0);
-    const [bestTime, setBestTime] = React.useState(localStorage.getItem('bestTime') || 0);
+    const [bestTime, setBestTime] = React.useState(0);
     const [data, setData] = React.useState({
         "name": null,
         "recordTime": null,
@@ -63,7 +63,7 @@ function Game() {
             setTenzies(false)
             setRolls(0)
             setTime(0)
-            setBestTime(localStorage.getItem("bestTime"));
+            setBestTime(bestTime);
         } else {  // Re-roll all unheld dice
             setDice(prevDice => prevDice.map(die => {
                 return die.isHeld ?
@@ -86,6 +86,16 @@ function Game() {
     const diceElements = dice.map(die => (
         <Die key={die.id} value={die.value} isHeld={die.isHeld} holdDice={() => holdDice(die.id)} />
     ))
+
+    // Fetch best time from database
+    React.useEffect(() => {
+        fetch(URL + 'api/record/getBestTime')
+        .then(response => response.json())
+        .then(data => {
+            setBestTime(data);
+            console.log(data);
+        })
+    }, [bestTime])
 
     // Check the dice array for these winning conditions:
     // All dice are held, and all dice have the same value
@@ -132,12 +142,10 @@ function Game() {
             }
         } else {
             setTime(prevTime => prevTime)
-            const currentBestTime = localStorage.getItem("bestTime");
-            if (!currentBestTime) {
-                localStorage.setItem("bestTime", JSON.stringify(time));
-            } else if (time < currentBestTime) {
-                setBestTime(() => time)
-            }
+            const currentBestTime = bestTime;
+            if (time < currentBestTime) {
+                    setBestTime(() => time)
+                }
         }
         console.log(data, formatDate(new Date()), time, rolls);
     }, [tenzies, time])
