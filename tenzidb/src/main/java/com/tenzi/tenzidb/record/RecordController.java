@@ -38,7 +38,7 @@ public class RecordController {  // API Layer
         return recordRepository.findBestTime();
     }
 
-    @GetMapping(path = "/getOrderByTime")  // http://localhost:8080/api/record/getBestTime
+    @GetMapping(path = "/getOrderByTime")  // http://localhost:8080/api/record/getOrderByTime
     @CrossOrigin(origins = {localOrigin, deployOrigin})
     public List<Record> getOrderByTime() {
         return recordRepository.orderByTime();
