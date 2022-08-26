@@ -1,5 +1,7 @@
 # TENZI Game
 
+[What is TENZI and how to play?](https://www.youtube.com/watch?v=yDBXQfynDiA) 
+
 ## Quick Start
 ```bash
 npm install  # Install all dependencies via npm 
