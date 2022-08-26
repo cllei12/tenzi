@@ -14,7 +14,7 @@ function App() {
           <Route index element={<Login />} />
           <Route path="/game" element={<Game />} />
           <Route path="/record" element={<Record />} />
-          <Route path="/contact" element={<Contact />} />
+          {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path="*" element={<NoPage />} />
         </Route>
       </Routes>
