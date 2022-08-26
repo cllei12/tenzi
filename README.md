@@ -41,7 +41,7 @@ tenzi@0.1.0 /Users/lei/Desktop/Portfolio/tenzi
 
 ### Back-end
 
-Created a game record CURD API with **Springboot** + **AWS RDS** (PostgreSQL) + **AWS EC2**
+Created a game record CRUD API with **Springboot** + **AWS RDS** (PostgreSQL) + **AWS EC2**
 
 The Springboot application is runing on my own EC2 and could be access to see all game records via http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/api/record/getAll. 
 
