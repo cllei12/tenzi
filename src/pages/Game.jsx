@@ -90,11 +90,13 @@ function Game() {
     // Fetch best time from database
     React.useEffect(() => {
         fetch(URL + 'api/record/getBestTime')
-        .then(response => response.json())
-        .then(data => {
-            setBestTime(data);
-            console.log(data);
-        })
+            .then(response => response.json())
+            .then(data => {
+                if (data) {
+                    setBestTime(data);
+                }
+                console.log(data);
+            })
     }, [bestTime])
 
     // Check the dice array for these winning conditions:
@@ -127,6 +129,9 @@ function Game() {
                 .catch((error) => {
                     console.error('Error:', error);
                 });
+            if (bestTime === 0) {
+                setBestTime(time)
+            }
         }
     }, [dice])
 
@@ -144,8 +149,8 @@ function Game() {
             setTime(prevTime => prevTime)
             const currentBestTime = bestTime;
             if (time < currentBestTime) {
-                    setBestTime(() => time)
-                }
+                setBestTime(() => time)
+            }
         }
         console.log(data, formatDate(new Date()), time, rolls);
     }, [tenzies, time])
@@ -160,8 +165,8 @@ function Game() {
 
     return (
         <div class='flex justify-center items-center'>
+            {tenzies && <Confetti />}
             <main class='flex justify-around bg-slate-50'>
-                {tenzies && <Confetti />}
                 <h1 className="title" class=' text-3xl font-bold'>Tenzies</h1>
                 <p className="instructions" class='font-normal mx-6 mt-0 text-center'>
                     Roll until all dice are the same. <br />

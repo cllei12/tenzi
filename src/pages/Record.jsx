@@ -22,7 +22,7 @@ function Record() {
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
                         <th scope="col" class="py-3 px-6">
-                            Date
+                            Rank
                         </th>
                         <th scope="col" class="py-3 px-6">
                             Username
@@ -33,15 +33,21 @@ function Record() {
                         <th scope="col" class="py-3 px-6">
                             Rolls (times)
                         </th>
+                        <th scope="col" class="py-3 px-6">
+                            Date
+                        </th>
                     </tr>
                 </thead>
                 <tbody>
-                    {records.map(record => {
+                    {records.map((record, index) => {
                         return (
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                    {record.recordTime}
+                                    {index}
                                 </th>
+                                {/* <th scope="row" class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {record.recordTime}
+                                </th> */}
                                 <td class="py-4 px-6">
                                     {record.name}
                                 </td>
@@ -51,7 +57,9 @@ function Record() {
                                 <td class="py-4 px-6">
                                     {record.rolls}
                                 </td>
-                                
+                                <td class="py-4 px-6">
+                                    {record.recordTime}
+                                </td>
                             </tr>
                         )
                     })}
