@@ -10,13 +10,11 @@ Then, you can see the Tenzi Game on [`http://localhost:3000/`](http://localhost:
 
 ## Preview
 
-<img width="600" alt="image" src="https://s2.loli.net/2022/08/26/Ban4zOE9is7grkv.png">
+<img width="500" alt="image" src="https://s2.loli.net/2022/08/26/Ban4zOE9is7grkv.png">
 
-<hr>
-<img width="600" alt="image" src="https://s2.loli.net/2022/08/26/nSG9UzORN2w6dKP.png">
+<img width="500" alt="image" src="https://s2.loli.net/2022/08/26/nSG9UzORN2w6dKP.png">
 
-<hr>
-<img width="600" alt="image" src="https://user-images.githubusercontent.com/87511626/186850559-8bb21bee-4fa9-4c70-a2bb-aed05f1aa25e.png">
+<img width="500" alt="image" src="https://user-images.githubusercontent.com/87511626/186850559-8bb21bee-4fa9-4c70-a2bb-aed05f1aa25e.png">
 
 ## Architecture
 
