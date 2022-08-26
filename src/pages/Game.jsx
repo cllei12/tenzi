@@ -2,6 +2,7 @@ import React from 'react'
 import Confetti from 'react-confetti'
 import { nanoid } from 'nanoid'
 import { Die, Tracker, User } from '../components'
+import { useLocation } from 'react-router-dom';
 
 function Game() {
     const [dice, setDice] = React.useState(allNewDice())
@@ -11,7 +12,34 @@ function Game() {
     const [rolls, setRolls] = React.useState(0);
     const [time, setTime] = React.useState(0);
     const [bestTime, setBestTime] = React.useState(localStorage.getItem('bestTime') || 0);
+    const [data, setData] = React.useState({
+        "name": null,
+        "recordTime": null,
+        "time": null,
+        "rolls": null
+    })
 
+    // const URL = "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/"
+    const URL = "http://localhost:8080/"
+
+    function padTo2Digits(num) {
+        return num.toString().padStart(2, '0');
+    }
+    function formatDate(date) {
+        return (
+            [
+                date.getFullYear(),
+                padTo2Digits(date.getMonth() + 1),
+                padTo2Digits(date.getDate()),
+            ].join('-') +
+            'T' +
+            [
+                padTo2Digits(date.getHours()),
+                padTo2Digits(date.getMinutes()),
+                padTo2Digits(date.getSeconds()),
+            ].join(':')
+        );
+    }
 
     // Create an array of 10 objects
     function allNewDice() {
@@ -67,6 +95,27 @@ function Game() {
         if (allHeld && allSameValue) {
             setTenzies(() => true)
             console.log("Won!")
+            // Send a record to database
+            const endpoint = URL + "api/record/add"
+            // send record to databse
+            fetch(endpoint, {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                // .then((response) => response.json())
+                .then((response) => {
+                    console.log(response)
+                    // response.json()
+                })
+                .then((data) => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         }
     }, [dice])
 
@@ -89,7 +138,16 @@ function Game() {
                 setBestTime(() => time)
             }
         }
+        console.log(data, formatDate(new Date()), time, rolls);
     }, [tenzies, time])
+
+    const location = useLocation();
+    React.useEffect(() => {
+        setData((prevData) => (
+            { name: location.state.username, recordTime: formatDate(new Date()), time: time, rolls: rolls }
+        ))
+        // console.log(data);
+    }, [time, rolls])
 
     return (
         <div class='flex justify-center items-center'>

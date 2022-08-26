@@ -2,8 +2,10 @@ package com.tenzi.tenzidb.record;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RecordService {
@@ -33,4 +35,13 @@ public class RecordService {
         }
         recordRepository.deleteById(recordId);
     }
+
+    public Optional<Record> getRecordsByRecordId(Long recordId) {
+        return recordRepository.findById(recordId);
+    }
+
+//    @Transactional
+//    public void truncateMyTable() {
+//        recordRepository.truncateMyTable();
+//    }
 }
