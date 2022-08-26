@@ -37,4 +37,4 @@ Springboot + AWS RDS (PostgreSQL) + AWS EC2
     java -jar tenzidb-0.0.1-SNAPSHOT.jar --server.port=8081  # default port=8080
     ```
 
-
+Or visit "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/api/record/getAll" 
