@@ -25,13 +25,13 @@ function Record() {
                             Date
                         </th>
                         <th scope="col" class="py-3 px-6">
+                            Username
+                        </th>
+                        <th scope="col" class="py-3 px-6">
                             Time (second)
                         </th>
                         <th scope="col" class="py-3 px-6">
                             Rolls (times)
-                        </th>
-                        <th scope="col" class="py-3 px-6">
-                            Username
                         </th>
                     </tr>
                 </thead>
@@ -43,14 +43,15 @@ function Record() {
                                     {record.recordTime}
                                 </th>
                                 <td class="py-4 px-6">
+                                    {record.name}
+                                </td>
+                                <td class="py-4 px-6">
                                     {record.time} s
                                 </td>
                                 <td class="py-4 px-6">
                                     {record.rolls}
                                 </td>
-                                <td class="py-4 px-6">
-                                    {record.name}
-                                </td>
+                                
                             </tr>
                         )
                     })}
