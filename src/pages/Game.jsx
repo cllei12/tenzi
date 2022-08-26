@@ -19,9 +19,10 @@ function Game() {
         "rolls": null
     })
 
-    // const URL = "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/"
-    const URL = "http://localhost:8080/"
+    const URL = "http://ec2-18-212-191-193.compute-1.amazonaws.com:8080/"
+    // const URL = "http://localhost:8080/"
 
+    // transform JS Date format into Java's
     function padTo2Digits(num) {
         return num.toString().padStart(2, '0');
     }

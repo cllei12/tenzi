@@ -13,7 +13,7 @@ const Tracker = (props) => {
       </div>
       <div className='best-time' class='flex flex-col items-center'>
         Best Time
-        <p>{props.bestTime} s</p>
+        <p>{props.bestTime === 0 ? "Null": props.bestTime} s</p>
       </div>
     </div>
   )
